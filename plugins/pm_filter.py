@@ -3,7 +3,7 @@ import asyncio
 import re
 import ast
 
-from misc import private
+from pyrogram import client, filters
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
 import pyrogram
