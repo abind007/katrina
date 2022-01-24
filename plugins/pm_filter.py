@@ -708,7 +708,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>👋🏼Hey Friend,\n\n ⌛Here is what i found for your Request : #{search} \n\n ✅Click Given Buttons \n\n 📯Powered By : @RUMOURSCLUB</b>"
+        cap = f"<b>👋🏼Hey {message.from_user.mention},\n\n ⌛Here is what i found for your Request; #{search} \n\n ✅please select your file size and click given buttons. \n\n ✅ദയവായി നിങ്ങളുടെ ഫയൽ വലുപ്പം തിരഞ്ഞെടുത്ത് നൽകിയിരിക്കുന്ന ബട്ടണുകളിൽ ക്ലിക്ക് ചെയ്യുക. \n\n 📯Powered By : @RUMOURSCLUB</b>"
     if imdb and imdb.get('poster'):
         try:
             await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
