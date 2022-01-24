@@ -708,7 +708,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>👋🏼Hey {message.from_user.mention},\n\n ⌛Here is what i found for your Request; #{search} \n\n ✅please select your file size and click given buttons. \n\n ✅ദയവായി നിങ്ങളുടെ ഫയൽ വലുപ്പം തിരഞ്ഞെടുത്ത് നൽകിയിരിക്കുന്ന ബട്ടണുകളിൽ ക്ലിക്ക് ചെയ്യുക. \n\n 📯Powered By : @RUMOURSCLUB</b>"
+        cap = f"<b>👋🏼Hey {message.from_user.mention},\n\n ⌛Here is what i found for your Request : #{search} \n\n ✅please select your file size and click given buttons.\n\n ✅ദയവായി നിങ്ങളുടെ ഫയൽ വലുപ്പം തിരഞ്ഞെടുത്ത് നൽകിയിരിക്കുന്ന ബട്ടണുകളിൽ ക്ലിക്ക് ചെയ്യുക. \n\n 📯Powered By : @RUMOURSCLUB</b>"
     if imdb and imdb.get('poster'):
         try:
             await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
@@ -776,7 +776,7 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply("❌I couldn't find anything related to that. \n ❌എനിക്ക് അതുമായി ബന്ധപ്പെട്ട ഒന്നും കണ്ടെത്താൻ കഴിഞ്ഞില്ല. നിങ്ങളുടെ അക്ഷരവിന്യാസം പരിശോധിക്കുക\n\n ⚠SUGGESTIONS⚠ \n\n ❓Did you mean any one of these? \n ❓ഇതിൽ ഏതെങ്കിലും ഒന്നാണോ താങ്കൾ ഉദ്ദേശിച്ചത്?",
+    await msg.reply("❌I couldn't find anything related to that. \n ❌എനിക്ക് അതുമായി ബന്ധപ്പെട്ട ഒന്നും കണ്ടെത്താൻ കഴിഞ്ഞില്ല. നിങ്ങളുടെ അക്ഷരവിന്യാസം പരിശോധിക്കുക\n\n <b>⚠SUGGESTIONS⚠</b> \n\n ❓Did you mean any one of these? \n ❓ഇതിൽ ഏതെങ്കിലും ഒന്നാണോ താങ്കൾ ഉദ്ദേശിച്ചത്?",
                     reply_markup=InlineKeyboardMarkup(btn))
 
 
