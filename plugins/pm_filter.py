@@ -709,6 +709,8 @@ async def auto_filter(client, msg, spoll=False):
         )
     else:
         cap = f"<b>👋🏼Hey {message.from_user.mention},\n\n ⌛Here is what i found for your Request : #{search} \n\n🚸please select your file size and click given buttons.\n🚸ദയവായി നിങ്ങളുടെ ഫയൽ വലുപ്പം തിരഞ്ഞെടുത്ത് നൽകിയിരിക്കുന്ന ബട്ടണുകളിൽ ക്ലിക്ക് ചെയ്യുക.\n\n🚸உங்கள் கோப்பு அளவைத் தேர்ந்தெடுத்து கொடுக்கப்பட்ட பொத்தான்களைக் கிளிக் செய்யவும்.\n\n 📯Powered By : @RUMOURSCLUB</b>"
+            await asyncio.sleep(60)
+            await cap.delete()
     if imdb and imdb.get('poster'):
         try:
             await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
@@ -720,8 +722,6 @@ async def auto_filter(client, msg, spoll=False):
         except Exception as e:
             logger.exception(e)
             await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(30)
-            await cap.delete()
     else:
         await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     if spoll:
